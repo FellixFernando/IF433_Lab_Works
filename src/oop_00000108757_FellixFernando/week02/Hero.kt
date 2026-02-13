@@ -1,5 +1,7 @@
 package oop_00000108757_FellixFernando.week02
 
+import java.util.*
+
 class Hero(
     val name: String,
     var hp: Int,
@@ -22,7 +24,7 @@ class Hero(
     }
 }
 
-/*fun main() {
+fun main() {
     val scanner = Scanner(System.`in`)
     println("--- MINI RPG BATTLE ---")
 
@@ -83,4 +85,4 @@ class Hero(
     } else {
         println("Pertarungan berakhir karena ${hero.name} kabur.")
     }
-} */
+}
