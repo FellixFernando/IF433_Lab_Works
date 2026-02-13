@@ -11,7 +11,7 @@ class Student(
             println("WARNING: Objek tercipta dengan NIM ($nim) yang tidak valid!")
             println("Data mahasiswa $name mungkin akan bermasalah dalam sistem.")
         } else {
-            println("LOG: OBjek Student $name berhasil dialokasikan di memory.")
+            println("LOG: Objek Student $name berhasil dialokasikan di memory.")
         }
     }
 
