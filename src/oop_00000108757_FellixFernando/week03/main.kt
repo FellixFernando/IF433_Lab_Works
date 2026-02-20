@@ -2,12 +2,12 @@ package oop_00000108757_FellixFernando.week03
 
 fun main() {
     val e = Employee("Fellix")
-    println("--- Test Error ---")
+    e.salary = -1000
     e.salary = 5000
-    println(e.salary)
-    println("--- Test Performance ---")
-    e.printStatus()
+    println("Gajii: ${e.salary}")
+
     e.increasePerformance()
-    e.printStatus()
+
+    println("Pajak yang harus dibayar: ${e.tax}")
 }
 
