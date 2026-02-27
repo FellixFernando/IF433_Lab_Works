@@ -14,4 +14,3 @@ fun main() {
     myCar.accelerate()
     myCar.honk()
     myCar.openTrunk()
-}
