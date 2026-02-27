@@ -3,13 +3,13 @@ package oop_00000108757_FellixFernando.week04
 fun main() {
     println("NIM : 00000108757")
     println("Nama : Fellix Fernando")
-    println("Vehicle\n")
+    println("--- Testing Vehicle ---\n")
 
-    val myVehicle = Vehicle("Generic Vehicle")
-    myVehicle.accelerate()
-    myVehicle.honk()
+    val generalVehicle = Vehicle("Generic Vehicle")
+    generalVehicle.accelerate()
+    generalVehicle.honk()
 
-    println("\nCar")
+    println("\n--- Testing Car ---")
     val myCar = Car("Toyota", 4)
     myCar.accelerate()
     myCar.honk()
