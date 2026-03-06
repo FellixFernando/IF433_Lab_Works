@@ -9,18 +9,22 @@ fun main() {
     println("--- AKTIVITAS PEGAWAI ---")
     for (pegawai in daftarPegawai) {
         pegawai.bekerja()
-    }
 
-    when (Pegawai) {
-        is Dosen -> {
-            println("=> Terdeteksi sebagai Dosen (NIDN: ${Pegawai.nidn}")
-            Pegawai.mengajar()
-        }
+        when (pegawai) {
+            is Dosen -> {
+                println("=> Terdeteksi sebagai Dosen (NIDN: ${pegawai.nidn})\n")
+                pegawai.mengajar()
+            }
 
-        is Admin -> {
-            println("=> Terdeteksi sebagai Admin")
-            Pegawai.doAdminWork()
+            is Admin -> {
+                println("=> Terdeteksi sebagai Admin")
+                pegawai.doAdminWork()
+            }
         }
     }
     println("---------------------------")
+
+    println(hitungLuas(5))
+    println(hitungLuas(2, 3))
+    println(hitungLuas(7.0))
 }
