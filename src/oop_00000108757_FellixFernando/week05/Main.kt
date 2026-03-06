@@ -22,9 +22,19 @@ fun main() {
             }
         }
     }
-    println("---------------------------")
+    println("--- TUGAS 1 ---")
 
     println(hitungLuas(5))
     println(hitungLuas(2, 3))
     println(hitungLuas(7.0))
+
+    println("--- TUGAS 2 ---")
+    val gopay = EWallet(50000.0)
+    val visaCard = CreditCard(100000.0)
+
+    val daftarPembayaran: List<PaymentMethod> = listOf(gopay, visaCard)
+
+    for (pembayaran in daftarPembayaran) {
+        pembayaran.processPayment(75000.0)
+    }
 }

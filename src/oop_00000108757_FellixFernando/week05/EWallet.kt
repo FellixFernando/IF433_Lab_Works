@@ -1,8 +1,8 @@
 package oop_00000108757_FellixFernando.week05
 
-class EWallet(balance: Double) : PaymentMethod(balance) {
+class EWallet(var balance: Double) : PaymentMethod("EWallet") {
     override fun processPayment(amount: Double) {
-        if (balance > amount) {
+        if (balance >= amount) {
             balance -= amount
             println("Sukses.")
         } else {
