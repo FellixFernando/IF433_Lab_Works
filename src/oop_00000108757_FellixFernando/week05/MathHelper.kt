@@ -1,0 +1,7 @@
+package oop_00000108757_FellixFernando.week05
+
+fun hitungLuas(sisi: Int): Int = sisi * sisi
+
+fun hitungLuas(panjang: Int, lebar: Int): Int = panjang * lebar
+
+fun hitungLuas(jariJari: Double): Double = 3.14 * jariJari * jariJari
