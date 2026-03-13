@@ -44,9 +44,17 @@ class SmartHomeHub(val devices: MutableList<SmartDevice> = mutableListOf()) {
 }
 
 fun main() {
-    SmartHomeHub()
-    SmartLamp("lampu-001", "Lampu Ruang Tamu")
-    SmartCCTV("cctv-001", "Ezviz Garasi")
-    SmartSpeaker("speaker-001", "Google Nest Dapur")
+    val hub = SmartHomeHub()
+    val lamp = SmartLamp("lampu-001", "Lampu Ruang Tamu")
+    val cctv = SmartCCTV("cctv-001", "Ezviz Garasi")
+    val speaker = SmartSpeaker("speaker-001", "Google Nest Dapur")
 
+    hub.addDevice(lamp)
+    hub.addDevice(cctv)
+    hub.addDevice(speaker)
+
+    hub.listDevices()
+    hub.turnOnAllSwitches()
+    hub.activateSecurityMode()
+    hub.turnOffAllSwitches()
 }
