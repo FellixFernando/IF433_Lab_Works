@@ -8,18 +8,28 @@ class SmartHomeHub(val devices: MutableList<SmartDevice> = mutableListOf()) {
 
     fun turnOnAllSwitches() {
         println("Menyalakan semua perangkat yang dapat di-switch...")
-        devices.forEach { device ->
-            if (device is Switchable) {
-                device.turnOn()
+        for (device in devices) {
+            when (device) {
+                is Switchable -> device.turnOn()
             }
         }
     }
 
     fun turnOffAllSwitches() {
         println("Mematikan semua perangkat yang dapat di-switch...")
-        devices.forEach { device ->
-            if (device is Switchable) {
-                device.turnOff()
+        for (device in devices) {
+            when (device) {
+                is Switchable -> device.turnOff()
+            }
+        }
+    }
+
+    fun activateSecurityMode() {
+        println("Mengaktifkan mode keamanan...")
+        for (device in devices) {
+            when (device) {
+                is Recordable -> device.startRecording()
+                is SmartSpeaker -> device.playMusic("Sirine Peringatan")
             }
         }
     }
@@ -30,5 +40,6 @@ class SmartHomeHub(val devices: MutableList<SmartDevice> = mutableListOf()) {
             println("- ${device.name} (ID: ${device.id})")
         }
     }
+
 
 }
