@@ -1,8 +1,9 @@
 package oop_00000108757_FellixFernando.week06
 
-class SmartSpeaker : SmartDevice, Switchable {
-    override val id: String = "speaker-001"
-    override val name: String = "Smart Speaker Ruang Keluarga"
+class SmartSpeaker(
+    override val id: String,
+    override val name: String
+) : SmartDevice, Switchable {
 
     override fun turnOn() {
         println("$name menyala.")
@@ -13,6 +14,6 @@ class SmartSpeaker : SmartDevice, Switchable {
     }
 
     fun playMusic(song: String) {
-        println("Memutar lagu '$song' dari Spotify di $name")
+        println("\nMemutar lagu '$song' dari Spotify di $name\n")
     }
 }

@@ -1,9 +1,9 @@
 package oop_00000108757_FellixFernando.week06
 
-class SmartCCTV : SmartDevice, Switchable, Recordable {
-    override val id: String = "cctv-001"
-    override val name: String = "CCTV Pintu Utama"
-
+class SmartCCTV(
+    override val id: String,
+    override val name: String
+) : SmartDevice, Switchable, Recordable {
     override fun startRecording() {
         println("$name mulai merekam.")
     }
@@ -14,6 +14,7 @@ class SmartCCTV : SmartDevice, Switchable, Recordable {
     }
 
     override fun turnOff() {
+        super.stopRecording()
         println("$name mati.")
     }
 }

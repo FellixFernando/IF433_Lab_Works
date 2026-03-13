@@ -3,7 +3,7 @@ package oop_00000108757_FellixFernando.week06
 class SmartHomeHub(val devices: MutableList<SmartDevice> = mutableListOf()) {
     fun addDevice(device: SmartDevice) {
         devices.add(device)
-        println("Perangkat '${device.name}' berhasil ditambahkan ke Smart Home Hub.")
+        println("\nPerangkat '${device.name}' berhasil ditambahkan ke Smart Home Hub.")
     }
 
     fun turnOnAllSwitches() {
@@ -25,7 +25,7 @@ class SmartHomeHub(val devices: MutableList<SmartDevice> = mutableListOf()) {
     }
 
     fun activateSecurityMode() {
-        println("Mengaktifkan mode keamanan...")
+        println("\nMengaktifkan mode keamanan...")
         for (device in devices) {
             when (device) {
                 is Recordable -> device.startRecording()
@@ -35,11 +35,26 @@ class SmartHomeHub(val devices: MutableList<SmartDevice> = mutableListOf()) {
     }
 
     fun listDevices() {
-        println("Daftar Perangkat di Smart Home Hub:")
+        println("\nDaftar Perangkat di Smart Home Hub:")
         devices.forEach { device ->
             println("- ${device.name} (ID: ${device.id})")
         }
+        println()
     }
+}
 
+fun main() {
+    val hub = SmartHomeHub()
+    val lamp = SmartLamp("lampu-001", "Lampu Ruang Tamu")
+    val cctv = SmartCCTV("cctv-001", "Ezviz Garasi")
+    val speaker = SmartSpeaker("speaker-001", "Google Nest Dapur")
 
+    hub.addDevice(lamp)
+    hub.addDevice(cctv)
+    hub.addDevice(speaker)
+
+    hub.listDevices()
+    hub.turnOnAllSwitches()
+    hub.activateSecurityMode()
+    hub.turnOffAllSwitches()
 }
