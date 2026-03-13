@@ -4,3 +4,10 @@ abstract class Watch {
     abstract fun showTime()
 }
 
+interface BluetoothConnectable {
+    fun connectToBlueTooth()
+}
+
+interface Rechargeable {
+    fun chargeBattery()
+}
