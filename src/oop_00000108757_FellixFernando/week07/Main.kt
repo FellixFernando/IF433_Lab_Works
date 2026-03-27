@@ -13,4 +13,11 @@ fun main() {
     println("Starter Weapon Damage = ${Weapon1.item.damage}")
     println("Starter Weapon Rarity = ${Weapon1.item.rarity}")
 
+    val Weapon2: GameItem = Weapon1.item.copy(damage = 25)
+
+    processEvent(BattleState.SafeZone)
+    processEvent(BattleState.MonsterEncounter("Goblin Nakal"))
+    processEvent(BattleState.LootDropped(Weapon2))
+    processEvent(BattleState.GameOver("Dikalahkan Goblin"))
+
 }
