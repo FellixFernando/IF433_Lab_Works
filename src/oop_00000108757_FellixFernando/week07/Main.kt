@@ -26,11 +26,4 @@ fun main() {
 
     val (userName, userAge) = data1
     println("Destructured $userName berumur $userAge")
-
-    println("\n=== TEST SEALED CLASS ===")
-    when (val response: ApiResponse = ApiResponse.Success("Data berhasil diambil")) {
-        is ApiResponse.Success -> "Tampilkan: ${response.data}"
-        is ApiResponse.Error -> "Munculkan Alert: ${response.errorMessage}"
-    }
-
 }
