@@ -6,5 +6,8 @@ class GameManager(var isGameRunning: Boolean = false) {
             true -> println("Game sudah berjalan!")
             false -> println("Memulai game engine...")
         }
+        if (!isGameRunning) {
+            isGameRunning = true
+        }
     }
 }
