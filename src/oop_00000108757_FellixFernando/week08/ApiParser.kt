@@ -2,8 +2,14 @@ package oop_00000108757_FellixFernando.week08
 
 fun parseProduct(rawJson: Map<String, Any?>): Product? {
     val type = rawJson["type"] as? String ?: return null
-    val id = rawJson["id"] as? String ?: println("API Invalid: Missing ID")
-    val name = rawJson["name"] as? String ?: println("API Invalid: Missing Name")
+    val id = rawJson["id"] as? String ?: run {
+        println("API Invalid: Missing ID")
+        return null
+    }
+    val name = rawJson["name"] as? String ?: run {
+        println("API Invalid: Missing Name")
+        return null
+    }
 
     return when (type) {
         "electronic" -> {
@@ -18,4 +24,14 @@ fun parseProduct(rawJson: Map<String, Any?>): Product? {
 
         else -> null
     }
+}
+
+fun checkout(product: Product) {
+    val id = when (product) {
+        is Electronic -> product.id
+        is Clothing -> product.id
+    }
+
+    val transactionId = JavaPaymentService.processPayment(id)!!
+    println("Transaction ID: $transactionId")
 }
