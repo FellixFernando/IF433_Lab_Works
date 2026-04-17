@@ -5,3 +5,4 @@ class UserProfile {
     val email: String?,
     val phone: String? = null
 }
+
