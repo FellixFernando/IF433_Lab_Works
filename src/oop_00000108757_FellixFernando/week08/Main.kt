@@ -1,7 +1,7 @@
 package oop_00000108757_FellixFernando.week08
 
 fun main() {
-    println("=== TEST SAFE CALLS & ELVIS ===")
+    /*println("=== TEST SAFE CALLS & ELVIS ===")
     val emptyOrder = Order(null, null)
 
     val destination = emptyOrder.deliveryDetails?.address?.city?.name ?: "Kota Tidak Diketahui"
@@ -65,5 +65,7 @@ fun main() {
     val statusLength = javaResponse!!.length
     println("Status dari Java: $statusLength ($statusLength)")
 
-    DatabaseMock.runMockUnitTest()
+    DatabaseMock.runMockUnitTest()*/
+
+
 }
