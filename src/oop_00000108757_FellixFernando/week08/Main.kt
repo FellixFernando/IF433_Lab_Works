@@ -40,4 +40,15 @@ fun main() {
     println("Hasil cast + fallback : $safeString")
 
     //CHECKPOINT 9
+
+    println("\n=== TEST THE RED BUTTON (!!) ===")
+    val toxicData: String? = null
+
+    try {
+        val length = toxicData!!.length
+    } catch (e: NullPointerException) {
+        println("NullPointerException")
+    }
+
+
 }
