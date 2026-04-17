@@ -5,7 +5,7 @@ class NotificationService {
         println("Mengirim email ke $emailAddress")
     }
 
-    fun pricessUser(user: UserProfile) {
+    fun processUser(user: UserProfile) {
         if (user.email != null) {
             sendEmail(user.email)
         } else {
