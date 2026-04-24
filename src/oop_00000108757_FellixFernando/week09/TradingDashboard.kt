@@ -16,12 +16,16 @@ fun main() {
     val losingTrades = closedTrades.filter { it.roe <= 0.0 }
 
     val topPerformerString = winningTrades.sortedByDescending { it.roe }
-        .map { println("WIN [${it.pair} - ${it.position}]: +${it.roe}% (Leverage: ${it.leverage}x)") }
+        .map { "WIN [${it.pair} - ${it.position}]: +${it.roe}% (Leverage: ${it.leverage}x)" }
 
     val worstPerformerString = losingTrades.sortedBy { it.roe }
-        .map { println("LOSS [${it.pair} - ${it.position}]: ${it.roe}% (Leverage: ${it.leverage}x)") }
+        .map { "LOSS [${it.pair} - ${it.position}]: ${it.roe}% (Leverage: ${it.leverage}x" }
 
     val uniquePairs = tradeHistory.map { it.pair }.toSet()
-    println(uniquePairs)
+
+    println("=== CRYPTO TRADING DASHBOARD ===")
+    println("\nTop Performers:")
+    topPerformerString.forEach { println(it) }
+    
 
 }
