@@ -33,5 +33,5 @@ fun main() {
     println("\nTrade History: ")
     uniquePairs.forEach { println(it) }
 
-    //run
+    //running
 }
