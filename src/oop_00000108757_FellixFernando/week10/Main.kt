@@ -16,4 +16,6 @@ fun main() {
     printData(3.14)
     val result = processData("Stable Coin")
     println("Result: $result")
+
+
 }
