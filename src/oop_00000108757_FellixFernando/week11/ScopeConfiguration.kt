@@ -27,4 +27,6 @@ fun main() {
     }.also {
         println("User baru telah ditambahkan: $it")
     }
+
+
 }
