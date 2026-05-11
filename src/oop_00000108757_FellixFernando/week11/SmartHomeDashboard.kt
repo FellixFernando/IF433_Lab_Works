@@ -33,4 +33,7 @@ fun main() {
     }?.let {
         println(it.diagnose())
     }
+
+    with(homeDevices) { println(this.size) }
+    
 }
