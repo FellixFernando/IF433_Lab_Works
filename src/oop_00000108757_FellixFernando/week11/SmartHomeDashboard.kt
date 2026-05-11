@@ -34,6 +34,6 @@ fun main() {
         println(it.diagnose())
     }
 
-    with(homeDevices) { println(this.size) }
-    
+    with(homeDevices) { println("Jumlah perangkat terhubung: " + this.size) }
+
 }
