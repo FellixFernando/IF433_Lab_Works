@@ -40,4 +40,5 @@ fun main() {
                     "\nOpsional : Berikan chicken jerky secara manual"
         )
     }
+    //yes
 }
