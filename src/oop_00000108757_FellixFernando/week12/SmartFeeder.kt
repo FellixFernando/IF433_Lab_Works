@@ -13,7 +13,7 @@ fun dispenseKibble(requestedGram: Int, availableGram: Int, isJammed: Boolean): I
 }
 
 fun main() {
-    val currentKibbleStock = 50
+    var currentKibbleStock = 50
 
     println("=== JADWAL MAKAN PAGI ===")
     try {
@@ -29,5 +29,10 @@ fun main() {
     }
 
     println("=== JADWAL MAKAN SORE ===")
-    runCatching { dispenseKibble(requestedGram = 30, availableGram = 1000, isJammed = false) }
+    runCatching {
+        dispenseKibble(requestedGram = 30, availableGram = 1000, isJammed = false)
+    }.onSuccess { newStock ->
+        currentKibbleStock = newStock
+        println("Makan sore sukses! Sisa stok kibble : $currentKibbleStock gr")
+    }
 }
