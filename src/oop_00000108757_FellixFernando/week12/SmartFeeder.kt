@@ -15,8 +15,8 @@ fun dispenseKibble(requestedGram: Int, availableGram: Int, isJammed: Boolean): I
 fun main() {
     val currentKibbleStock = 50
 
+    println("=== JADWAL MAKAN PAGI ===")
     try {
-        println("=== JADWAL MAKAN PAGI ===")
         dispenseKibble(requestedGram = 80, availableGram = currentKibbleStock, isJammed = false)
     } catch (e: DispenserJamException) {
         println("ERROR DISPENSER: ${e.message}")
@@ -27,4 +27,7 @@ fun main() {
     } finally {
         println("Siklus pengecekan dispenser pagi selesai.")
     }
+
+    println("=== JADWAL MAKAN SORE ===")
+    runCatching { dispenseKibble(requestedGram = 30, availableGram = 1000, isJammed = false) }
 }
